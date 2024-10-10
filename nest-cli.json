@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/rush-hour/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/rush-hour/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/rush-hour",
+  "projects": {
+    "rush-hour": {
+      "type": "application",
+      "root": "apps/rush-hour",
+      "entryFile": "main",
+      "sourceRoot": "apps/rush-hour/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/rush-hour/tsconfig.app.json"
+      }
+    },
+    "worker": {
+      "type": "application",
+      "root": "apps/worker",
+      "entryFile": "main",
+      "sourceRoot": "apps/worker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/worker/tsconfig.app.json"
+      }
+    },
+    "cronjob": {
+      "type": "application",
+      "root": "apps/cronjob",
+      "entryFile": "main",
+      "sourceRoot": "apps/cronjob/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cronjob/tsconfig.app.json"
+      }
+    }
+  }
+}
